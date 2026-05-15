@@ -4,13 +4,9 @@ class Carta {
     suit;
     imagen;
      constructor (code, value, suit, imagen) {
-        if (!code || !value || !suit || !imagen) {
-            throw new Error("Los datos son inválidos")
-        }
-
         this.code = code;
         this.value = value;
-        this.suite = suit;
+        this.suit = suit;
         this.imagen = imagen;
      }
 
