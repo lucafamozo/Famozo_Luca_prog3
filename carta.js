@@ -48,4 +48,15 @@ class Carta {
 
         return div;
     }
+
+    static guardarCarta(carta) {
+        const guardadas = JSON.parse(localStorage.getItem("cartas") || "[]");
+        
+        // recorre el array y devuelve true si ya existe una carta con el mismo code
+        const yaExiste = guardadas.some(c => c.code === carta.code);
+        if (!yaExiste) {
+            guardadas.push(JSON.parse(carta.toJsonString()));
+            localStorage.setItem("cartas", JSON.stringify(guardadas));
+        }
+    }
 }
